@@ -43,3 +43,17 @@ Port mapping
 Environment variable injection
 
 Service orchestration using docker-compose
+
+## Architecture
+
+Client
+  ↓
+Flask API (Docker Container)
+  ↓
+PostgreSQL Database (Docker Container)
+  ↓
+Docker Volume for persistent data
+
+## Run the Project
+
+docker compose up --build
