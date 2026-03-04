@@ -58,12 +58,12 @@ def get_tasks():
     conn.close()
     return jsonify(rows)
 
-# @app.route('/health')
-# def health():
-#     return jsonify({
-#         "status": "healthy",
-#         "environment": APP_ENV
-#     })
+@app.route('/health')
+def health():
+    return jsonify({
+        "status": "healthy",
+        "environment": APP_ENV
+    })
 
 if __name__ == "__main__":
     init_db()
