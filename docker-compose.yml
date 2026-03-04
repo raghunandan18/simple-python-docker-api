@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   app:
@@ -6,4 +6,22 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - APP_ENV=production
+      - DB_HOST=db
+      - POSTGRES_DB=tasksdb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - db #start the database before the app
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=tasksdb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+# volumes are used to persist data even if the container is stopped or removed. 
+# Here we create a named volume called postgres_data and mount it to the PostgreSQL data directory inside the container.
+volumes:
+  postgres_data:
