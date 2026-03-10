@@ -1,5 +1,5 @@
 name: Build and Push Docker Image
-
+# This workflow builds a Docker image from the repository and pushes it to Docker Hub whenever there is a push to the main branch.
 on:
   push:
     branches: [main]
