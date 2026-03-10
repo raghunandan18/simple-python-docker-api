@@ -1,5 +1,7 @@
 name: Docker Build and Push
 
+# Trigger the workflow on push to the main branch
+
 on:
   push:
     branches:
@@ -10,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # Checkout the code, login to Docker Hub, build the Docker image, and push it to Docker Hub
       - name: Checkout code
         uses: actions/checkout@v3
 
