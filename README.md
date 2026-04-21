@@ -1,59 +1,37 @@
-📦 Simple Python Docker API
-🔹 Overview
+# 🚀 Dockerized Flask API with PostgreSQL
 
-This project demonstrates how to containerize a Python Flask application using Docker and Docker Compose.
-The application exposes basic API endpoints and supports environment-based configuration.
+## 📌 Overview
+This project demonstrates a containerized Python Flask API connected to a PostgreSQL database using Docker and Docker Compose.
 
-🔹 Tech Stack
+## 🏗 Architecture
+Client → Flask API (Container) → PostgreSQL (Container) → Docker Volume
 
-Python 3.10
+## ⚙️ Features
+- Multi-container setup using Docker Compose
+- Persistent storage using Docker volumes
+- Environment variable-based configuration
+- CI/CD pipeline using GitHub Actions
+- Docker image push to Docker Hub
 
-Flask
+## 🧰 Tech Stack
+- Python (Flask)
+- PostgreSQL
+- Docker
+- Docker Compose
+- GitHub Actions
 
-Docker
+## 🚀 How to Run
 
-Docker Compose
-
-🔹 Features
-
-REST API with / and /health endpoints
-
-Dockerized application
-
-Environment variable configuration
-
-Compose-based service orchestration
-
-🔹 Run Locally
-docker build -t simple-python-api .
-docker run -p 5000:5000 simple-python-api
-🔹 Run with Docker Compose
 docker compose up --build
-🔹 Access Endpoints
+
+Access:
 http://localhost:5000
-http://localhost:5000/health
-🔹 Learning Outcomes
 
-Understanding Docker image layers
+## 🔄 CI/CD Pipeline
+- Trigger: Push to GitHub
+- Builds Docker image
+- Pushes image to Docker Hub
 
-Container runtime vs build-time
-
-Port mapping
-
-Environment variable injection
-
-Service orchestration using docker-compose
-
-## Architecture
-
-Client
-  ↓
-Flask API (Docker Container)
-  ↓
-PostgreSQL Database (Docker Container)
-  ↓
-Docker Volume for persistent data
-
-## Run the Project
-
-docker compose up --build
+## 🔮 Future Improvements
+- Deploy on AWS EC2
+- Add monitoring and logging
